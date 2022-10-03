@@ -122,8 +122,8 @@ if __name__ == '__main__':
     imgs = torch.stack(imgs, 0).to(device)
 
     g_ema = Generator(args.size, 512, 8)
-    ensure_checkpoint_exists('face.pt')
-    g_ema.load_state_dict(torch.load('face.pt')['g_ema'], strict=False)
+    ensure_checkpoint_exists('landscape.pt')
+    g_ema.load_state_dict(torch.load('landscape.pt')['g_ema'], strict=False)
     g_ema = g_ema.to(device).eval()
 
     with torch.no_grad():
